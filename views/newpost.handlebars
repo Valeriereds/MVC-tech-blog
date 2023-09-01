@@ -1,0 +1,19 @@
+<div class="col-md-6">
+    <h3>Create a new post:</h3>
+
+    <form class="form new-post-form">
+        <div class="form-group">
+            <label for="post-name">Post:</label>
+            <input class="form-input" type="text" id="post-name" value="{{name}}" name="post-name" />
+        </div>
+        <div class="form-group">
+            <label for="post-desc">description:</label>
+            <textarea class="form-input" id="post-desc" name="post-desc">{{description}}</textarea>
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-primary post-update" data-id="{{id}}">Update</button>
+        </div>
+    </form>
+</div>
+
+<script src="/public/js/profile.js"></script>

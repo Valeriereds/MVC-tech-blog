@@ -1,14 +1,34 @@
-<div class="text-center">
+<div class="card">
   <h2>{{name}}</h2>
-  <p>{{{get_emoji}}}</p>
   <p>{{description}}</p>
   <p>Created by {{user.name}} on {{format_date date_created}}</p>
-  <p>
-    <span for="img" aria-label="money">💲</span>
-    <span class="dollar-amount">{{comment}}</span>
-    needed
-  </p>
-  <p>
-    <button class="btn btn-primary">comment!</button>
-  </p>
 </div>
+
+<section>
+    <ul id="comments-list">
+        <!-- Comments will be added here -->
+    </ul>
+</section>
+
+{{#if logged_in}}
+<form class="new-comment-form" data-id={{id}}>
+    <div>
+        <label for="comment">Comment</label>
+        <input type="text" id="comment" placeholder="Type your comment here" />
+        <button id="submit-comment">Submit</button>
+</form>
+{{else}}
+<a href="/login">Log in</a>
+{{/if}}
+
+<h2>Comments</h2>
+
+{{#each comments as |comment|}}
+<section class="card">
+    <p>{{comment.text}}</p>
+    <p>{{comment.user.name}} {{format_date date_created}}</p>
+</section>
+{{/each}}
+
+
+<script src="./js/comments.js"></script>
