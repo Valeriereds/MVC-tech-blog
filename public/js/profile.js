@@ -66,7 +66,7 @@ document
   .addEventListener('submit', newFormHandler);
 
 document
-  .querySelector('.post-delete')
+  .querySelectorAll('.post-delete')
   .forEach(button => {
     button.addEventListener('click', delButtonHandler);
   });
